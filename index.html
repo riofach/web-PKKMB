@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKKMB</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 5.15.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <header class="nav-container">
+        <div class="logo">
+            <img src="/images/global.png" alt="globalPKKMB">
+        </div>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-list" id="nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#kampus">Kampus</a></li>
+                <li><a href="#sponsor">Sponsor</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="container">
+        <article id="home" class="contents">
+            <h1 class="title-kampus">PKKMB Global Institute</h1>
+            <div class="content-desc">
+                <p>
+                    Selamat datang, Mahasiswa Baru! Di sinilah perjalananmu menuju masa depan yang cemerlang dimulai.
+                    Kami percaya bahwa
+                    pendidikan teknologi adalah kunci untuk membuka potensi setiap individu, mempersiapkan kalian
+                    menjadi pionir di era
+                    digital. Melalui PKKMB, kalian akan menemukan berbagai peluang untuk berkembang dan berinovasi.
+
+                </p>
+            </div>
+            <figure class="maskot">
+                <img src="/images/maskot1.png" alt="maskot pkkmb">
+            </figure>
+        </article>
+
+        <article id="kampus" class="contents">
+            <h1 class="title-kampus">Global Institute</h1>
+            <div class="content-desc">
+                <p>
+                    Selamat datang, Mahasiswa Baru! Di sinilah perjalananmu menuju masa depan yang cemerlang dimulai.
+                    Kami percaya bahwa
+                    pendidikan teknologi adalah kunci untuk membuka potensi setiap individu, mempersiapkan kalian
+                    menjadi pionir di era
+                    digital. Melalui PKKMB, kalian akan menemukan berbagai peluang untuk berkembang dan berinovasi.
+                </p>
+                <a href="https://global.ac.id/" target="_blank" class="button">View Kampus</a>
+            </div>
+            <figure class="maskot">
+                <img src="/images/gedung-global.jpg" alt="gedung kampus Global Institute">
+            </figure>
+        </article>
+
+        <article id="sponsor" class="contents">
+            <h1 class="title-kampus">Sponsored by :</h1>
+            <figure class="maskot">
+                <img src="/images/maskot1.png" alt="maskot pkkmb">
+            </figure>
+            <div class="content-desc sponsor">
+                <img src="/images/mandiri.png" alt="bmps">
+                <img src="/images/Bmps.png" alt="bmps">
+                <img src="/images/sariroti.png" alt="bmps">
+                <img src="/images/bsi.png" alt="bmps">
+            </div>
+            <figure class="maskot">
+                <img src="/images/maskot2.png" alt="maskot pkkmb">
+            </figure>
+        </article>
+
+        <aside>
+            <div class="social-media">
+                <ul id="social-media-list">
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+                    <li><a href="https://github.com/riofach" target="_blank"><img src="/images/github.jpg"
+                                alt="github"></a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2024, PKKMB GLobal Institute</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('.nav-container');
+            if (window.scrollY > 0) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        const socialMediaList = document.getElementById('social-media-list');
+
+        socialMediaList.addEventListener('mouseenter', function () {
+            const moreInfo = document.createElement('h3');
+            moreInfo.textContent = 'More Info';
+            moreInfo.id = 'more-info';
+            socialMediaList.insertBefore(moreInfo, socialMediaList.firstChild); // Menambahkan h3 sebagai anak pertama
+            socialMediaList.classList.add('hovered');
+        });
+
+        socialMediaList.addEventListener('mouseleave', function () {
+            const moreInfo = document.getElementById('more-info');
+            if (moreInfo) {
+                socialMediaList.removeChild(moreInfo);
+            }
+            socialMediaList.classList.remove('hovered');
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.getElementById('hamburger');
+            const nav = document.getElementById('nav');
+
+            hamburger.addEventListener('click', function () {
+                nav.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+        });
+
+    </script>
+</body>
+
+</html>
